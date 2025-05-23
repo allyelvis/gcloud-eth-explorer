@@ -1,101 +1,68 @@
-import Image from "next/image";
+'use client';
+
+import { useState } from 'react';
+import { ethers } from 'ethers';
+
+const GCLOUD_RPC = 'https://blockchain.googleapis.com/v1/projects/aenzbi-cloud/locations/us-central1/endpoints/ethereum-mainnet/rpc?key=AIzaSyCTkj44NjTgfFELMP89ufrmHeWnW6utbG8';
 
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+  const [address, setAddress] = useState('');
+  const [balance, setBalance] = useState('');
+  const [txs, setTxs] = useState<any[]>([]);
+  const [error, setError] = useState('');
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+  const fetchWalletData = async () => {
+    setError('');
+    try {
+      const provider = new ethers.JsonRpcProvider(GCLOUD_RPC);
+      const bal = await provider.getBalance(address);
+      setBalance(ethers.formatEther(bal));
+
+      const history = await provider.getHistory(address);
+      setTxs(history.slice(-10).reverse()); // last 10 txs
+    } catch (err: any) {
+      setError(err.message);
+    }
+  };
+
+  return (
+    <main className="p-6 max-w-3xl mx-auto">
+      <h1 className="text-2xl font-bold mb-4">GCloud Ethereum Explorer</h1>
+
+      <input
+        type="text"
+        className="w-full p-2 border mb-2"
+        placeholder="Enter wallet address"
+        value={address}
+        onChange={e => setAddress(e.target.value)}
+      />
+      <button className="bg-blue-600 text-white px-4 py-2 rounded" onClick={fetchWalletData}>
+        Track Wallet
+      </button>
+
+      {error && <p className="text-red-600 mt-2">{error}</p>}
+
+      {balance && (
+        <div className="mt-4">
+          <p><strong>Balance:</strong> {balance} ETH</p>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+      )}
+
+      {txs.length > 0 && (
+        <div className="mt-4">
+          <h2 className="text-lg font-semibold">Recent Transactions</h2>
+          <ul className="space-y-2 mt-2">
+            {txs.map(tx => (
+              <li key={tx.hash} className="text-sm border p-2 rounded">
+                <p><strong>Hash:</strong> <a href={`https://etherscan.io/tx/${tx.hash}`} target="_blank" className="text-blue-600 underline">{tx.hash.slice(0, 40)}...</a></p>
+                <p><strong>From:</strong> {tx.from}</p>
+                <p><strong>To:</strong> {tx.to}</p>
+                <p><strong>Value:</strong> {ethers.formatEther(tx.value)} ETH</p>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+    </main>
   );
 }
