@@ -1,0 +1,119 @@
+nohup: ignoring input
+INFO [05-23|21:09:50.565] Starting Geth on Ethereum mainnet...
+INFO [05-23|21:09:50.566] Bumping default cache on mainnet         provided=1024 updated=4096
+INFO [05-23|21:09:50.572] Maximum peer count                       ETH=50 total=50
+INFO [05-23|21:09:50.578] Smartcard socket not found, disabling    err="stat /run/pcscd/pcscd.comm: no such file or directory"
+WARN [05-23|21:09:50.585] Sanitizing cache to Go's GC limits       provided=4096 updated=2649
+INFO [05-23|21:09:50.591] Set global gas cap                       cap=50,000,000
+INFO [05-23|21:09:50.595] Initializing the KZG library             backend=gokzg
+INFO [05-23|21:09:50.619] Allocated trie memory caches             clean=397.00MiB dirty=662.00MiB
+INFO [05-23|21:09:50.620] Defaulting to pebble as the backing database
+INFO [05-23|21:09:50.620] Allocated cache and file handles         database=/home/admin_/.ethereum/geth/chaindata cache=1.29GiB handles=524,288
+INFO [05-23|21:09:51.018] Opened ancient database                  database=/home/admin_/.ethereum/geth/chaindata/ancient/chain readonly=false
+INFO [05-23|21:09:51.020] State schema set to default              scheme=path
+INFO [05-23|21:09:51.020] Initialising Ethereum protocol           network=1 dbversion=<nil>
+WARN [05-23|21:09:51.024] Sanitizing invalid node buffer size      provided=662.00MiB updated=256.00MiB
+ERROR[05-23|21:09:51.066] Head block is not reachable
+INFO [05-23|21:09:51.135] Opened ancient database                  database=/home/admin_/.ethereum/geth/chaindata/ancient/state readonly=false
+INFO [05-23|21:09:51.136] Initialized path database                cache=397.00MiB buffer=256.00MiB history=90000
+INFO [05-23|21:09:51.136] Writing default main-net genesis block
+INFO [05-23|21:09:52.727] 
+INFO [05-23|21:09:52.727] ---------------------------------------------------------------------------------------------------------------------------------------------------------
+INFO [05-23|21:09:52.727] Chain ID:  1 (mainnet)
+INFO [05-23|21:09:52.727] Consensus: Beacon (proof-of-stake), merged from Ethash (proof-of-work)
+INFO [05-23|21:09:52.727] 
+INFO [05-23|21:09:52.727] Pre-Merge hard forks (block based):
+INFO [05-23|21:09:52.727]  - Homestead:                   #1150000  (https://github.com/ethereum/execution-specs/blob/master/network-upgrades/mainnet-upgrades/homestead.md)
+INFO [05-23|21:09:52.727]  - DAO Fork:                    #1920000  (https://github.com/ethereum/execution-specs/blob/master/network-upgrades/mainnet-upgrades/dao-fork.md)
+INFO [05-23|21:09:52.727]  - Tangerine Whistle (EIP 150): #2463000  (https://github.com/ethereum/execution-specs/blob/master/network-upgrades/mainnet-upgrades/tangerine-whistle.md)
+INFO [05-23|21:09:52.727]  - Spurious Dragon/1 (EIP 155): #2675000  (https://github.com/ethereum/execution-specs/blob/master/network-upgrades/mainnet-upgrades/spurious-dragon.md)
+INFO [05-23|21:09:52.727]  - Spurious Dragon/2 (EIP 158): #2675000  (https://github.com/ethereum/execution-specs/blob/master/network-upgrades/mainnet-upgrades/spurious-dragon.md)
+INFO [05-23|21:09:52.727]  - Byzantium:                   #4370000  (https://github.com/ethereum/execution-specs/blob/master/network-upgrades/mainnet-upgrades/byzantium.md)
+INFO [05-23|21:09:52.727]  - Constantinople:              #7280000  (https://github.com/ethereum/execution-specs/blob/master/network-upgrades/mainnet-upgrades/constantinople.md)
+INFO [05-23|21:09:52.727]  - Petersburg:                  #7280000  (https://github.com/ethereum/execution-specs/blob/master/network-upgrades/mainnet-upgrades/petersburg.md)
+INFO [05-23|21:09:52.727]  - Istanbul:                    #9069000  (https://github.com/ethereum/execution-specs/blob/master/network-upgrades/mainnet-upgrades/istanbul.md)
+INFO [05-23|21:09:52.727]  - Muir Glacier:                #9200000  (https://github.com/ethereum/execution-specs/blob/master/network-upgrades/mainnet-upgrades/muir-glacier.md)
+INFO [05-23|21:09:52.727]  - Berlin:                      #12244000 (https://github.com/ethereum/execution-specs/blob/master/network-upgrades/mainnet-upgrades/berlin.md)
+INFO [05-23|21:09:52.727]  - London:                      #12965000 (https://github.com/ethereum/execution-specs/blob/master/network-upgrades/mainnet-upgrades/london.md)
+INFO [05-23|21:09:52.727]  - Arrow Glacier:               #13773000 (https://github.com/ethereum/execution-specs/blob/master/network-upgrades/mainnet-upgrades/arrow-glacier.md)
+INFO [05-23|21:09:52.727]  - Gray Glacier:                #15050000 (https://github.com/ethereum/execution-specs/blob/master/network-upgrades/mainnet-upgrades/gray-glacier.md)
+INFO [05-23|21:09:52.727] 
+INFO [05-23|21:09:52.727] Merge configured:
+INFO [05-23|21:09:52.727]  - Hard-fork specification:    https://github.com/ethereum/execution-specs/blob/master/network-upgrades/mainnet-upgrades/paris.md
+INFO [05-23|21:09:52.727]  - Network known to be merged
+INFO [05-23|21:09:52.727]  - Total terminal difficulty:  58750000000000000000000
+INFO [05-23|21:09:52.727] 
+INFO [05-23|21:09:52.727] Post-Merge hard forks (timestamp based):
+INFO [05-23|21:09:52.727]  - Shanghai:                    @1681338455 (https://github.com/ethereum/execution-specs/blob/master/network-upgrades/mainnet-upgrades/shanghai.md)
+INFO [05-23|21:09:52.727]  - Cancun:                      @1710338135 (https://github.com/ethereum/execution-specs/blob/master/network-upgrades/mainnet-upgrades/cancun.md)
+INFO [05-23|21:09:52.727]  - Prague:                      @1746612311
+INFO [05-23|21:09:52.727] 
+INFO [05-23|21:09:52.727] ---------------------------------------------------------------------------------------------------------------------------------------------------------
+INFO [05-23|21:09:52.727] 
+INFO [05-23|21:09:52.728] Loaded most recent local block           number=0 hash=d4e567..cb8fa3 age=56y2mo1w
+WARN [05-23|21:09:52.728] Failed to load snapshot                  err="missing or corrupted snapshot"
+INFO [05-23|21:09:52.734] Rebuilding state snapshot
+INFO [05-23|21:09:52.750] Initialized transaction indexer          range="last 2350000 blocks"
+WARN [05-23|21:09:52.750] Invalid log index database version; resetting log index
+INFO [05-23|21:09:52.777] Resuming state snapshot generation       root=d7f897..0f0544 accounts=0 slots=0 storage=0.00B dangling=0 elapsed=41.686ms
+INFO [05-23|21:09:53.076] Generated state snapshot                 accounts=8893 slots=0 storage=409.64KiB dangling=0 elapsed=341.281ms
+INFO [05-23|21:09:53.209] Enabled snap sync                        head=0 hash=d4e567..cb8fa3
+INFO [05-23|21:09:53.210] Gasprice oracle is ignoring threshold set threshold=2
+WARN [05-23|21:09:53.214] Engine API enabled                       protocol=eth
+INFO [05-23|21:09:53.215] Starting peer-to-peer node               instance=Geth/v1.15.11-stable-36b2371c/linux-amd64/go1.24.2
+INFO [05-23|21:09:53.257] New local node record                    seq=1,748,034,593,256 id=41a40cb4b2cce5e6 ip=127.0.0.1 udp=30303 tcp=30303
+INFO [05-23|21:09:53.260] IPC endpoint opened                      url=/home/admin_/.ethereum/geth.ipc
+INFO [05-23|21:09:53.262] Generated JWT secret                     path=/home/admin_/.ethereum/geth/jwtsecret
+INFO [05-23|21:09:53.264] HTTP server started                      endpoint=[::]:8545 auth=false prefix= cors=* vhosts=localhost
+INFO [05-23|21:09:53.265] WebSocket enabled                        url=ws://127.0.0.1:8546
+INFO [05-23|21:09:53.266] WebSocket enabled                        url=ws://127.0.0.1:8551
+INFO [05-23|21:09:53.266] HTTP server started                      endpoint=127.0.0.1:8551 auth=true  prefix= cors=localhost vhosts=localhost
+INFO [05-23|21:09:53.300] Started P2P networking                   self=enode://b70dfe18e5ce921e054beaa2ea2ac25d489d8f1b2dfdd0c696e678a11cbae8fb5d9272a35987033e8c35e5887a60649d9dd9f4390319c89390a0bc9034df399c@127.0.0.1:30303
+INFO [05-23|21:09:53.309] Started log indexer
+INFO [05-23|21:09:55.280] New local node record                    seq=1,748,034,593,257 id=41a40cb4b2cce5e6 ip=34.38.89.168 udp=30303 tcp=30303
+INFO [05-23|21:10:04.676] Looking for peers                        peercount=1 tried=13 static=0
+INFO [05-23|21:10:15.365] Looking for peers                        peercount=1 tried=23 static=0
+INFO [05-23|21:10:25.926] Looking for peers                        peercount=1 tried=16 static=0
+WARN [05-23|21:10:28.250] Post-merge network, but no beacon client seen. Please launch one to follow the chain!
+INFO [05-23|21:10:36.029] Looking for peers                        peercount=1 tried=24 static=0
+INFO [05-23|21:10:46.069] Looking for peers                        peercount=1 tried=14 static=0
+INFO [05-23|21:10:56.642] Looking for peers                        peercount=2 tried=26 static=0
+INFO [05-23|21:11:06.886] Looking for peers                        peercount=2 tried=18 static=0
+WARN [05-23|21:20:05.275] Post-merge network, but no beacon client seen. Please launch one to follow the chain!
+INFO [05-23|21:20:06.398] New local node record                    seq=1,748,034,593,258 id=41a40cb4b2cce5e6 ip=127.0.0.1    udp=30303 tcp=30303
+INFO [05-23|21:20:12.564] New local node record                    seq=1,748,034,593,259 id=41a40cb4b2cce5e6 ip=34.38.89.168 udp=30303 tcp=30303
+INFO [05-23|21:20:16.329] Looking for peers                        peercount=0 tried=13 static=0
+INFO [05-23|21:21:08.250] Looking for peers                        peercount=0 tried=7  static=0
+INFO [05-23|21:21:18.286] Looking for peers                        peercount=0 tried=23 static=0
+INFO [05-23|21:21:28.332] Looking for peers                        peercount=1 tried=22 static=0
+INFO [05-23|21:21:38.400] Looking for peers                        peercount=2 tried=27 static=0
+INFO [05-23|21:21:48.991] Looking for peers                        peercount=2 tried=21 static=0
+INFO [05-23|21:21:58.991] Looking for peers                        peercount=2 tried=21 static=0
+INFO [05-23|21:23:58.980] Looking for peers                        peercount=0 tried=18 static=0
+INFO [05-23|21:24:09.652] Looking for peers                        peercount=0 tried=11 static=0
+INFO [05-23|21:24:20.295] Looking for peers                        peercount=0 tried=12 static=0
+INFO [05-23|21:24:31.390] Looking for peers                        peercount=1 tried=16 static=0
+INFO [05-23|21:24:41.419] Looking for peers                        peercount=1 tried=16 static=0
+INFO [05-23|21:24:51.438] Looking for peers                        peercount=1 tried=22 static=0
+INFO [05-23|21:25:01.572] Looking for peers                        peercount=1 tried=27 static=0
+WARN [05-23|21:25:08.630] Post-merge network, but no beacon client seen. Please launch one to follow the chain!
+INFO [05-23|21:25:14.312] Looking for peers                        peercount=1 tried=11 static=0
+INFO [05-23|21:25:24.345] Looking for peers                        peercount=1 tried=17 static=0
+INFO [05-23|21:25:34.598] Looking for peers                        peercount=1 tried=22 static=0
+INFO [05-23|21:25:44.877] Looking for peers                        peercount=1 tried=17 static=0
+INFO [05-23|21:25:54.942] Looking for peers                        peercount=1 tried=8  static=0
+INFO [05-23|21:26:05.834] Looking for peers                        peercount=1 tried=15 static=0
+INFO [05-23|21:26:15.965] Looking for peers                        peercount=1 tried=25 static=0
+INFO [05-23|21:26:27.727] Looking for peers                        peercount=1 tried=11 static=0
+INFO [05-23|21:26:37.926] Looking for peers                        peercount=1 tried=12 static=0
+INFO [05-23|21:26:47.971] Looking for peers                        peercount=1 tried=28 static=0
+INFO [05-23|21:26:58.377] Looking for peers                        peercount=1 tried=16 static=0
+INFO [05-23|21:27:08.708] Looking for peers                        peercount=1 tried=12 static=0
+INFO [05-23|21:27:19.139] Looking for peers                        peercount=1 tried=14 static=0
+INFO [05-23|21:27:29.254] Looking for peers                        peercount=1 tried=20 static=0
+INFO [05-23|21:27:39.304] Looking for peers                        peercount=1 tried=13 static=0
+WARN [05-23|21:30:08.675] Post-merge network, but no beacon client seen. Please launch one to follow the chain!
+WARN [05-23|21:35:08.722] Post-merge network, but no beacon client seen. Please launch one to follow the chain!
+WARN [05-23|21:40:08.765] Post-merge network, but no beacon client seen. Please launch one to follow the chain!
+WARN [05-23|21:45:08.815] Post-merge network, but no beacon client seen. Please launch one to follow the chain!
+WARN [05-23|21:50:08.853] Post-merge network, but no beacon client seen. Please launch one to follow the chain!
